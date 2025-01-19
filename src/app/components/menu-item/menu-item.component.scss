@@ -1,0 +1,50 @@
+.menu-item-wrapper {
+  padding: 0.25rem 0.75rem;
+}
+:host * {
+  transition: all 500ms ease-in-out;
+}
+
+.menu-item {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-left-color: rgba(0, 0, 0, 0);
+  border-radius: 0.75rem;
+}
+.nested-menu-item span {
+  font-size: 0.875rem;
+}
+.selected-menu-item {
+  border-left-color: var(--primary-color);
+  background-color: #d7e5f7;
+}
+
+.indentedMenuItem {
+  border-left: 2px solid;
+  border-left-color: gainsboro;
+  margin-left: 2rem;
+}
+.selected-menu-item-nested {
+  border-left: 2px solid;
+  border-left-color: var(--primary-color);
+  background-color: transparent !important;
+  outline: none;
+}
+.nested-menu-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.active-icon {
+  color: #004eba;
+}
+
+.inactive-icon {
+  color: #475161;
+}
+.mdc-list-item:focus::before {
+  background-color: transparent !important;
+}
+
+.mdc-list-item--with-leading-icon:hover mat-icon{
+  color: var(--primary-color);
+}

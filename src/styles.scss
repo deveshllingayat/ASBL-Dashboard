@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@include mat.core();
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  --primary-color: #004eba;
+}
+h1 {
+  color: #475161;
+}
+
+.mat-drawer-inner-container {
+  overflow-x: hidden !important;
+}
+.mat-drawer-inner-container::-webkit-scrollbar {
+  width: 4px;
+}
+.mat-drawer-inner-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.mat-drawer-inner-container::-webkit-scrollbar-thumb {
+  background-color: #d7dbe4;
+  border-radius: 4px;
+}
+$mat-primary: (
+  main: #004eba,
+  lighter: #004eba,
+  darker: #004eba,
+  200: #004eba,
+  contrast: (
+    main: #fff,
+    lighter: #000,
+    darker: #fff,
+  ),
+);
+$theme-primary: mat.define-palette($mat-primary, main, lighter, darker);
+$theme-accent: mat.define-palette(mat.$indigo-palette, A200, A100, A400);
+
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $theme-primary,
+      accent: $theme-accent,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($my-theme);

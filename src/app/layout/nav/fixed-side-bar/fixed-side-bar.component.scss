@@ -1,0 +1,30 @@
+:host * {
+  transition: all 500ms ease-in-out;
+}
+img {
+  width: 75px;
+  object-fit: contain;
+  padding: 1rem 0.25rem;
+}
+a mat-icon {
+  margin-left: 0rem;
+}
+mat-nav-list .mdc-list-item {
+  padding-left: 0;
+  --mdc-list-list-item-one-line-container-height: 64px;
+}
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+}
+.active-icon {
+  color: #004eba;
+}
+
+.inactive-icon {
+  color: #475161;
+}

@@ -1,0 +1,56 @@
+mat-toolbar {
+  position: relative;
+  z-index: 5;
+}
+.content {
+  padding: 24px;
+}
+mat-sidenav-container {
+  height: 100vh;
+}
+
+mat-sidenav-content {
+  background-color: #fff;
+}
+mat-sidenav,
+mat-sidenav-content {
+  transition: all 500ms ease-in-out;
+}
+.fixed-sidenav {
+  mat-sidenav {
+    width: 100px;
+    background-color: #e9edf5;
+    border-right: 1px solid;
+  }
+}
+.sideBarContainer {
+  width: 100%;
+  display: flex;
+}
+.extended-sidenav {
+  width: 100%;
+  mat-sidenav {
+    background-color: #f7f9fc;
+    border: none;
+  }
+  .mat-drawer-inner-container {
+    overflow: hidden;
+  }
+}
+
+.toggle-sidenav-button {
+  position: fixed;
+  bottom: 20%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: left 0.5s ease-in-out;
+  border: none;
+  cursor: pointer;
+
+  mat-icon {
+    background-color: #e9edf5;
+    color: #5c6573;
+    border: 2px solid #5c6573;
+    border-radius: 50%;
+  }
+}

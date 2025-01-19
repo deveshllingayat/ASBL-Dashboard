@@ -1,0 +1,22 @@
+<mat-nav-list>
+    <a [routerLink]="'/'">
+        <img src="/asbl.png" alt="ASBL Logo">
+    </a>
+    @for (item of menuItems(); track item.route) {
+    <a mat-list-item [routerLink]="item.route" (click)="onMenuItemClick(item.route || '')"
+        routerLinkActive="selected-menu-item" [activated]="rla.isActive" #rla="routerLinkActive">
+        <div class="icon-wrapper">
+            <mat-icon matListItemIcon [fontSet]="rla.isActive?'material-icons':'material-icons-outlined'"
+                [class.active-icon]="rla.isActive" [class.inactive-icon]="!rla.isActive">{{item.icon}}</mat-icon>
+            <span>{{item.label}}</span>
+        </div>
+    </a>
+
+    }
+    <a mat-list-item (click)="logout()">
+        <div class="icon-wrapper">
+            <mat-icon matListItemIcon [fontSet]="'material-icons-outlined'">logout</mat-icon>
+            <span>Logout</span>
+        </div>
+    </a>
+</mat-nav-list>

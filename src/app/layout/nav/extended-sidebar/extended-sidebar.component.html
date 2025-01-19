@@ -1,0 +1,18 @@
+<div class="sidenav-header">
+    <span matPrefix style="margin-right: 8px;"><mat-icon>gavel</mat-icon></span>
+    <mat-select [(value)]="selectedProject" placeholder="Select Project" class="custom-dropdown">
+        <mat-option *ngFor="let project of allProjects" [value]="project.title">
+            {{ project.title | titlecase}}
+        </mat-option>
+    </mat-select>
+
+    <button mat-raised-button class="update_btn" disableRipple>
+        <mat-icon>update</mat-icon>
+        <span style="font-size: 0.75rem;">Update</span>
+    </button>
+</div>
+<mat-nav-list>
+    @for (item of menuItems(); track item.route) {
+    <app-menu-item [item]="item" [collapsed]="sideNavCollapsed()"> </app-menu-item>
+    }
+</mat-nav-list>

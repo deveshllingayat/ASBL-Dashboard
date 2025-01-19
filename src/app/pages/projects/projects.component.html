@@ -1,0 +1,50 @@
+@if (noProjectSelected) {
+<h1>Select Project</h1>
+<div class="projects-container">
+    @for (project of allProjects; track project.title) {
+    <div class="project-card" (click)="onProjectClick(project.title)">
+        <img src="{{project.image}}" alt="{{project.title}}" class="project-image">
+        <div class="card-footer">
+            <h3 class="project-title"> {{project.title}} </h3>
+            <h5 class="project-desc"> {{project.desc}} </h5>
+        </div>
+    </div>
+    }
+    <div class="project-card" (click)="openAddProjectDialog()">
+        <button class="add-project-button" mat-button disableRipple>
+            <mat-icon>add</mat-icon>
+        </button>
+        <div class="card-footer">
+            <h3 class="project-title"> ADD </h3>
+            <h5 class="project-desc"> Create New Project </h5>
+        </div>
+    </div>
+</div>
+<ng-template #addProjectDialog>
+    <div class="add-project-dialog">
+        <h1 mat-dialog-title>Add New Project</h1>
+        <div mat-dialog-content>
+            <form [formGroup]="projectForm" class="add-project-form" (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                    <mat-label>Project Image URL</mat-label>
+                    <input matInput formControlName="image" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Project Title</mat-label>
+                    <input matInput formControlName="title" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Project Description</mat-label>
+                    <textarea matInput formControlName="desc" required></textarea>
+                </mat-form-field>
+            </form>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-button (click)="closeDialog()">Cancel</button>
+            <button mat-button [disabled]="projectForm.invalid" (click)="onSubmit()">Add</button>
+        </div>
+    </div>
+</ng-template>
+}@else {
+<router-outlet></router-outlet>
+}

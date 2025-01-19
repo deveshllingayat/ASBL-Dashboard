@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+}
+mat-card {
+  width: 30rem;
+  height: 23rem;
+  padding: 1.5rem 1rem;
+  border-radius: 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(56, 118, 204, 1) 0%,
+    rgba(0, 77, 184, 1) 67%,
+    rgba(45, 120, 224, 1) 80%
+  );
+}
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+  background-color: white;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  button {
+    color: #004eba;
+    background-color: white;
+    transition: all 200ms ease;
+  }
+  button:hover {
+    scale: 1.1;
+  }
+}

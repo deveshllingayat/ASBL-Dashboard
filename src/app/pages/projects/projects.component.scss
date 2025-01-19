@@ -1,0 +1,57 @@
+h1 {
+  color: #475161;
+}
+.projects-container {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    cursor: pointer;
+    .project-image {
+      width: 11rem;
+      height: 11rem;
+      object-fit: cover;
+      border-radius: 0.75rem;
+    }
+    .card-footer {
+      display: flex;
+      flex-direction: column;
+      .project-title {
+        padding: 0.25rem 0px;
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-align: center;
+      }
+      .project-desc {
+        margin: 0;
+        text-align: center;
+        color: #787878;
+        font-weight: 400;
+      }
+    }
+  }
+}
+.add-project-button{
+  width: 11rem;
+  height: 11rem;
+  border-radius: 0.75rem;
+  background-color: #f7f9fc;
+  mat-icon{
+    font-size: 6rem;
+    height: 6rem ;
+    width: 6rem;
+    color: var(--primary-color);
+  }
+}
+.add-project-dialog{
+  padding: 1rem 2rem;
+  width: 35rem;
+}
+.add-project-form{
+  display: flex;
+  flex-direction: column;
+}

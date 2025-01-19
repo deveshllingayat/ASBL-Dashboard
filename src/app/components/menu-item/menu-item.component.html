@@ -1,0 +1,32 @@
+<div class="menu-item-wrapper">
+    <a class="menu-item" mat-list-item [routerLink]="'projects/'+item().route" routerLinkActive="selected-menu-item"
+        [activated]="rla.isActive" #rla="routerLinkActive" (click)="toggleNested()" disableRipple>
+        <mat-icon matListItemIcon [fontSet]="rla.isActive?'material-icons':'material-icons-outlined'"
+            [class.active-icon]="rla.isActive" [class.inactive-icon]="!rla.isActive">{{item().icon}}</mat-icon>
+        @if(!collapsed()){
+        <span matListItemTitle>{{item().label}} </span>
+        }
+        @if(item().subItems){
+        <span matListItemMeta>
+            @if(nestedMenuOpen()){
+            <mat-icon [class.active-icon]="rla.isActive">expand_less</mat-icon>
+            }@else {
+            <mat-icon [class.active-icon]="rla.isActive" [class.inactive-icon]="!rla.isActive">expand_more</mat-icon>
+            }
+        </span>
+        }
+    </a>
+    @if (item().subItems && nestedMenuOpen()) {
+    <div @expandContractMenu class="nested-menu-container">
+        @for (subItem of item().subItems; track subItem.route) {
+        <a class="nested-menu-item" [class.indentedMenuItem]="!collapsed()" mat-list-item
+            [routerLink]="'projects/'+item().route+'/'+subItem.route" routerLinkActive="selected-menu-item-nested"
+            [activated]="rla.isActive" #rla="routerLinkActive" disableRipple>
+            @if(!collapsed()){
+            <span matListItemTitle>{{subItem.label}} </span>
+            }
+        </a>
+        }
+    </div>
+    }
+</div>
