@@ -5,7 +5,7 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
   },
   {
     path: 'login',
@@ -132,5 +132,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/pinned/pinned.component').then((m) => m.PinnedComponent),
     canActivate: [AuthGuard],
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
   },
 ];
